@@ -15,7 +15,14 @@ namespace ManejoDeErrores
 
             for (int i = 0; i <= 5; i++)
             {
-                Console.WriteLine(list[i].ToString());
+                try
+                {
+                    Console.WriteLine(list[i].ToString());
+                }catch(Exception ex)
+                {
+                    Console.WriteLine($"{ex.Data}\n{ex.Message}");
+                    Console.WriteLine("Fuera de rango.");
+                }
             }
             Console.ReadLine();
         }
